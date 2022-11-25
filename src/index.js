@@ -3,6 +3,7 @@ const morgan = require('morgan');
 const cors = require('cors');
 const taskRoutes = require('./routes/tasks.routes')
 const {DB_Init} = require('./dbini')
+const {service}=require ('./config');
 
 const app = express();
 app.use(cors());
@@ -17,7 +18,7 @@ app.use((err, req, res, next) => {
 console.log('Verifying Database & Tables')
 //Verify if database & table exists
 DB_Init();
-console.log('Server on port 4000');
+console.log(`Server on port ${service.port}`);
 
-app.listen(4000);
+app.listen(service.port);
 
