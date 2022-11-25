@@ -1,4 +1,4 @@
-const {Pool} = require('pg')
+const {Pool,Client} = require('pg')
 const {db}=require ('./config');
 const pool = new Pool({
     user: db.user,
@@ -9,4 +9,5 @@ const pool = new Pool({
 
 }
 )
-module.exports = pool;
+
+module.exports = pool

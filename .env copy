@@ -2,4 +2,4 @@ DB_USER = curdanet
 DB_PASSWORD = adriana
 DB_HOST = 192.168.1.85
 DB_PORT = 5432
-DB_DATABASE = tareas
+DB_DATABASE = tasksdb
