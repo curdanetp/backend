@@ -37,6 +37,5 @@ jobs:
         uses: actions-hub/kubectl@master
         env:
           KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}
-          DEPLOY_FILE: /home/ubuntu/challenge/bke-app-deployment.yaml
         with:
-          args: apply -f $DEPLOY_FILE
+          args: apply -f /home/ubuntu/challenge/bke-app-deployment.yaml
