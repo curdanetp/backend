@@ -1,4 +1,4 @@
-name: ci
+name: ci-cd-to-local-k3s
 
 on:
   push:
@@ -31,3 +31,12 @@ jobs:
           context: .
           push: true
           tags: curdanetp/bke-app:latest
+        if: steps.build.outcome == 'success'
+      -
+        name: Redeploy in local k3s
+        uses: actions-hub/kubectl@master
+        env:
+          KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}
+          DEPLOY_FILE: /home/ubuntu/challenge/bke-app-deployment.yaml
+        with:
+          args: apply -f $DEPLOY_FILE
