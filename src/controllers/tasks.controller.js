@@ -1,4 +1,12 @@
 const pool = require('../db')
+
+const sayOk = (req, res, next) => {
+    try {                
+        return res.status(200).json("Ok");
+    } catch (error) {
+        next(error);
+    }
+}
 const getAllTasks = async (req, res, next) => {
     try {        
         const allTasks = await pool.query('SELECT * FROM tasks');
@@ -61,5 +69,7 @@ module.exports = {
     getTask,
     createTask,
     deleteTask,
-    updateTask
+    updateTask,
+    sayOk
+
 }
