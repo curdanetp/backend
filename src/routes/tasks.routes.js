@@ -4,13 +4,13 @@ const router = Router();
 
 router.get('/', sayOk);
 
-router.get('/api/tasks', getAllTasks);
+router.get('/tasks', getAllTasks);
 
-router.get('/api/tasks/:id', getTask);
+router.get('/tasks/:id', getTask);
 
-router.post('/api/tasks', createTask);
+router.post('/tasks', createTask);
 
-router.delete('/api/tasks/:id', deleteTask);
+router.delete('/tasks/:id', deleteTask);
 
-router.put('/api/tasks/:id', updateTask);
+router.put('/tasks/:id', updateTask);
 module.exports = router
