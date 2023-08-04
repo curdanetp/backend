@@ -30,4 +30,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: curdanetp/bke-app:latest
+          tags: curdanetp/bke-app:1.0.0
